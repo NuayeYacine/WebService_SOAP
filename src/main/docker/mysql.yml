@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  webservicesoap-mysql:
+    image: mysql:8.0.30
+    volumes:
+      - ./config/mysql:/etc/mysql/conf.d
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=webservicesoap
+    ports:
+      - 127.0.0.1:3309:3309
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+  phpmyadmin-hibernate:
+    container_name: container_phpmyadmin_hibernate_soap
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8085:80
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      PMA_HOST: mysql-hibernate
+      PMA_USER: usersec
+      PMA_PASSWORD: usersec
+    depends_on:
+      - mysql-hibernate
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    driver: local

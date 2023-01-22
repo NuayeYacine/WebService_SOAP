@@ -1,0 +1,78 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://ws.groupeisi.com">
+    <xs:element name="AdditionInputRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="number1" type="xs:int" />
+                <xs:element name="number2" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getResultatResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="getResultResponse" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SubtractionInputRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="number1" type="xs:int" />
+                <xs:element name="number2" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SubtractionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="getResultResponse" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MultiplicationInputRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="number1" type="xs:int" />
+                <xs:element name="number2" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MultiplicationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="getResultResponse" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DivisionInputRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="number1" type="xs:int" />
+                <xs:element name="number2" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DivisionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="getResultResponse" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getInputRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="input" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getInfoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="outup" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
